@@ -163,6 +163,23 @@ function crearMensajeFinal(resultadoFinal){
     sectionReiniciar.style.display = "block"
 }
 
+const mokepones = document.querySelectorAll(".tarjeta-de-mokepon img");
+
+mokepones.forEach(img => {
+    img.addEventListener("mouseenter", () => {
+        let audio = new Audio("sonido_fondo.mp3");
+        audio.play();
+    });
+
+    img.addEventListener("click", () => {
+        let audio = new Audio("sonido-seleccion.mp3"); // Reemplaza con otro sonido
+        audio.play();
+    });
+});
+const musicaFondo = new Audio("./sounds/sonido_fondo.mp3");
+musicaFondo.loop = true; // Hace que la música se repita
+musicaFondo.volume = 0.5; // Ajusta el volumen (0.0 a 1.0)
+musicaFondo.play();
 function reiniciarJuego(){
     location.reload()
 }
